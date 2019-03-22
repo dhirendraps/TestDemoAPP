@@ -21,6 +21,25 @@ pipeline {
         echo 'Gerrit-Code Step'
       }
     }
+    stage('QAC') {
+      parallel {
+        stage('QAC') {
+          steps {
+            echo 'QAC parallel Step'
+          }
+        }
+        stage('Polyspace') {
+          steps {
+            echo 'Polyspace Parallel Step'
+          }
+        }
+        stage('LDRA') {
+          steps {
+            echo 'LDRA parallel step'
+          }
+        }
+      }
+    }
     stage('MatlabSimuLinkTest') {
       steps {
         echo 'MatlabSimuLinkTest Step'
@@ -28,12 +47,12 @@ pipeline {
     }
     stage('CantataTest') {
       steps {
-        echo 'Cantata Step'
+        echo 'Cantata step'
       }
     }
     stage('ECUTest') {
       steps {
-        echo 'ECUTest step'
+        echo 'ECUTest Step'
       }
     }
   }
