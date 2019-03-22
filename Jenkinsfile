@@ -21,9 +21,6 @@ pipeline {
         echo 'Gerrit-Code Step'
       }
     }
-    stage('QAC') {
-      
-    }
     stage('MatlabSimuLinkTest') {
       steps {
         echo 'MatlabSimuLinkTest Step'
