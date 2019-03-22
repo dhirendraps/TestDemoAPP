@@ -1,9 +1,42 @@
 pipeline {
   agent any
   stages {
-    stage('IBM_DNG') {
+    stage('IBM-DNG') {
       steps {
-        echo 'IBM-DNG step'
+        echo 'DNG Stage'
+      }
+    }
+    stage('IBMRRTC') {
+      steps {
+        echo 'IBMRRTC stage'
+      }
+    }
+    stage('ModelAdvisor') {
+      steps {
+        echo 'ModelAdvisor Step'
+      }
+    }
+    stage('Gerrit-CodeReview') {
+      steps {
+        echo 'Gerrit-Code Step'
+      }
+    }
+    stage('QAC') {
+      
+    }
+    stage('MatlabSimuLinkTest') {
+      steps {
+        echo 'MatlabSimuLinkTest Step'
+      }
+    }
+    stage('CantataTest') {
+      steps {
+        echo 'Cantata Step'
+      }
+    }
+    stage('ECUTest') {
+      steps {
+        echo 'ECUTest step'
       }
     }
   }
